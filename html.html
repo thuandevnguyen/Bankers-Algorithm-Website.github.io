@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+    <meta charset="utf-8">
+    <title>Banker's Algorithm Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- ,<script src="app.js"></script> -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body >
+    <div class="gradient-bg">
+    <div class="wrapper">
+        <center>
+            <h2>BỘ MÔ PHỎNG THUẬT TOÁN BANKER</h2>
+        </center>
+    </div>
+    <div class="input">
+        <center class="btn-1">
+            No. of instances of A: &nbsp<input type="text" id="resourceA"  size="2" maxlength="2" />&nbsp&nbsp&nbsp
+            No. of instances of B: &nbsp<input type="text" id="resourceB"  size="2" maxlength="2" />&nbsp&nbsp&nbsp
+            No. of instances of C: &nbsp<input type="text" id="resourceC"  size="2" maxlength="2" />&nbsp&nbsp&nbsp
+       </center>
+      
+        <center class="btn-2">
+           <button class="btn" type="input" name="sam" onclick="sample()">Ví dụ mẫu</button>&nbsp&nbsp&nbsp
+           <button   class="btn" type="input" name="avai" onclick="find_avai()">Tìm available</button>&nbsp&nbsp&nbsp
+           <button    class="btn" type="input" name="need" onclick="find_need()">Tìm need</button>&nbsp&nbsp&nbsp
+           <button   class="btn" type="input" name="seq" onclick="find_sequence()">Tìm Chuỗi An Toàn</button>&nbsp&nbsp&nbsp
+
+            <button  class="btn" type="input" name="reset" onclick="reset()">Reset  </button>
+        </center>
+      <!-- <span id="scroll-to-bottom-button" class="icon" style="font-size:30px"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></span> -->
+ <button id="scroll-to-bottom-button" class="btn"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></button>
+    </div>
+    <div class="available">
+        <table border="2">
+            <tr>
+                <th colspan="3">Available</th>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td><input id="av11"  size="2" maxlength="2" /></td>
+                <td><input id="av12"  size="2" maxlength="2" /></td>
+                <td><input id="av13"  size="2" maxlength="2" /></td>
+            </tr>
+        </table>
+    </div>
+    <div class="tables_center-3">
+            <div class="allocation">
+                <table border="2">
+                    <tr>
+                        <th colspan="4">Allocation</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>P1</td>
+                        <td><input id="a11"  size="2" maxlength="2" /></td>
+                        <td><input id="a12"  size="2" maxlength="2" /></td>
+                        <td><input id="a13"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P2</td>
+                        <td><input id="a21"  size="2" maxlength="2" /></td>
+                        <td><input id="a22"  size="2" maxlength="2" /></td>
+                        <td><input id="a23"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P3</td>
+                        <td><input id="a31"  size="2" maxlength="2" /></td>
+                        <td><input id="a32"  size="2" maxlength="2" /></td>
+                        <td><input id="a33"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P4</td>
+                        <td><input id="a41"  size="2" maxlength="2" /></td>
+                        <td><input id="a42"  size="2" maxlength="2" /></td>
+                        <td><input id="a43"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P5</td>
+                        <td><input id="a51"  size="2" maxlength="2" /></td>
+                        <td><input id="a52"  size="2" maxlength="2" /></td>
+                        <td><input id="a53"  size="2" maxlength="2" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="max">
+                <table border="2">
+                    <tr>
+                        <th colspan="4">Max</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>P1</td>
+                        <td><input id="m11"  size="2" maxlength="2" /></td>
+                        <td><input id="m12"  size="2" maxlength="2" /></td>
+                        <td><input id="m13"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P2</td>
+                        <td><input id="m21"  size="2" maxlength="2" /></td>
+                        <td><input id="m22"  size="2" maxlength="2" /></td>
+                        <td><input id="m23"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P3</td>
+                        <td><input id="m31"  size="2" maxlength="2" /></td>
+                        <td><input id="m32"  size="2" maxlength="2" /></td>
+                        <td><input id="m33"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P4</td>
+                        <td><input id="m41"  size="2" maxlength="2" /></td>
+                        <td><input id="m42"  size="2" maxlength="2" /></td>
+                        <td><input id="m43"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P5</td>
+                        <td><input id="m51"  size="2" maxlength="2" /></td>
+                        <td><input id="m52"  size="2" maxlength="2" /></td>
+                        <td><input id="m53"  size="2" maxlength="2" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="need">
+                <table border="2">
+                    <tr>
+                        <th colspan="4">Need</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>P1</td>
+                        <td><input id="n11"  size="2" maxlength="2" /></td>
+                        <td><input id="n12"  size="2" maxlength="2" /></td>
+                        <td><input id="n13"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P2</td>
+                        <td><input id="n21"  size="2" maxlength="2" /></td>
+                        <td><input id="n22"  size="2" maxlength="2" /></td>
+                        <td><input id="n23"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P3</td>
+                        <td><input id="n31"  size="2" maxlength="2" /></td>
+                        <td><input id="n32"  size="2" maxlength="2" /></td>
+                        <td><input id="n33"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P4</td>
+                        <td><input id="n41"  size="2" maxlength="2" /></td>
+                        <td><input id="n42"  size="2" maxlength="2" /></td>
+                        <td><input id="n43"  size="2" maxlength="2" /></td>
+                    </tr>
+                    <tr>
+                        <td>P5</td>
+                        <td><input id="n51"  size="2" maxlength="2" /></td>
+                        <td><input id="n52"  size="2" maxlength="2" /></td>
+                        <td><input id="n53"  size="2" maxlength="2" /></td>
+                    </tr>
+                </table>
+            </div>
+       
+        </div>
+
+        <br>
+        <center>
+            <br>
+
+            <div class="seq">
+                <table border="2">
+                    <tr>
+                        <th colspan="5">Safe Process Sequence &nbsp&nbsp&nbsp</th>
+                    </tr>
+                    <tr>
+                        <td><input id="p1"  size="2" maxlength="2" />&nbsp&nbsp&nbsp</td>
+                        <td><input id="p2"  size="2" maxlength="2" />&nbsp&nbsp&nbsp</td>
+                        <td><input id="p3"  size="2" maxlength="2" />&nbsp&nbsp&nbsp</td>
+                        <td><input id="p4"  size="2" maxlength="2" />&nbsp&nbsp&nbsp</td>
+                        <td><input id="p5"  size="2" maxlength="2" /></td>
+                    </tr>
+                </table>
+            </div>
+                <div class="comparison"
+                     >
+                     <h2>Operations:</h2>
+                    <center style="border:10px solid  #2ECC40 ; width:51%;height:50%;background-color:#bfd4d4">
+                        <form id="calc0" color="red"></form>
+                        <p1 id="calc1"></p1><br />
+                        <span id="calc2"></span><br />
+                        <span id="calc3"></span><br />
+                        <span id="calc4"></span><br />
+                        <span id="calc5"></span>
+                        </center>
+                </div>
+           <!-- <span id="scroll-to-top-button" class="icon" style="font-size:30px"><i class="fa-solid fa-circle-up" ></i></span> -->
+           <button id="scroll-to-top-button"><i class="fa-solid fa-circle-up"></i></button>
+        </center>
+        
+    </body>
+    <script src="app.js"></script>
+
+</html>
