@@ -13,9 +13,10 @@ body {
 }
 
 
-h2{
+h2 {
   font-family: 'Montserrat', sans-serif;
 }
+
 h2:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
@@ -29,9 +30,9 @@ h2:hover {
   animation-name: gradient;
   animation-duration: 4s;
   animation-iteration-count: infinite;
-  }
+}
 
-  
+
 .wrapper {
   display: flex;
   justify-content: center;
@@ -62,25 +63,32 @@ input[type="text"] {
   padding: 8px;
   box-sizing: border-box;
 }
+
 input[type="text"]:focus {
   outline: none;
   border: 2px solid #4CAF50;
 }
-input[type="text"], .btn {
+
+input[type="text"],
+.btn {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
-.available{
+
+.available {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.allocation{
+
+.allocation {
   margin-right: 30px;
 }
-.max{
+
+.max {
   margin: 0 10px;
 }
-.need{
+
+.need {
   margin-left: 30px;
 }
 
@@ -97,6 +105,11 @@ table {
   justify-content: space-between;
 }
 
+.seq {
+  padding-bottom: 5%;
+  padding-top: 3%;
+}
+
 /* .allocation,.max,.need,.available,.seq {
   display: flex;
   justify-content: center;
@@ -105,31 +118,33 @@ table {
   margin-bottom: 20px;
 } */
 
-.allocation:hover{
-  opacity: 1;
-  transform: scale(1.3);
-  border-radius: 10%;
-  transition: transform 1s ease-in-out;
-} 
-.max:hover{
-  opacity: 1;
-  transform: scale(1.3);
-  border-radius: 10%;
-  transition: transform 1s ease-in-out;
-}
-.need:hover{
+.allocation:hover {
   opacity: 1;
   transform: scale(1.3);
   border-radius: 10%;
   transition: transform 1s ease-in-out;
 }
 
- .seq:hover{
+.max:hover {
   opacity: 1;
-   transform: scale(1.3);
-   border-radius: 10%; 
+  transform: scale(1.3);
+  border-radius: 10%;
   transition: transform 1s ease-in-out;
-} 
+}
+
+.need:hover {
+  opacity: 1;
+  transform: scale(1.3);
+  border-radius: 10%;
+  transition: transform 1s ease-in-out;
+}
+
+.seq:hover {
+  opacity: 1;
+  transform: scale(1.3);
+  border-radius: 10%;
+  transition: transform 1s ease-in-out;
+}
 
 th {
   text-align: center;
@@ -143,6 +158,7 @@ td {
   padding: 5px;
   text-align: center;
 }
+
 td:hover {
   background-color: #F0F8FF;
   transition: background-color 0.2s ease-in-out;
@@ -163,12 +179,14 @@ td:hover {
 .btn-2 button:not(:last-child) {
   margin-right: 20px;
 }
+
 .btn:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
   background-color: #3e8e41;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -181,9 +199,10 @@ body {
   position: relative;
 }
 
-h2{
+h2 {
   font-family: 'Montserrat', sans-serif;
 }
+
 h2:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
@@ -197,9 +216,9 @@ h2:hover {
   animation-name: gradient;
   animation-duration: 4s;
   animation-iteration-count: infinite;
-  }
+}
 
-  
+
 /* .wrapper {
   display: flex;
   justify-content: center;
@@ -211,7 +230,7 @@ h2:hover {
   transform: scale(1.2);
   transition: all 2s ease-in-out;
 }
-*/ 
+*/
 .btn {
   background-color: #4CAF50;
   border: none;
@@ -230,11 +249,14 @@ input[type="text"] {
   padding: 8px;
   box-sizing: border-box;
 }
+
 input[type="text"]:focus {
   outline: none;
   border: 2px solid #4CAF50;
 }
-input[type="text"], .btn {
+
+input[type="text"],
+.btn {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -252,20 +274,21 @@ table {
   justify-content: space-between;
 } */
 
-.available{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.tables_center-3{
+.available {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.tables_center-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
-.seq:hover{
+
+.seq:hover {
   opacity: 1;
   transform: scale(1.3);
   border-radius: 10%;
@@ -284,6 +307,7 @@ td {
   padding: 5px;
   text-align: center;
 }
+
 td:hover {
   background-color: #F0F8FF;
   transition: background-color 0.2s ease-in-out;
@@ -304,6 +328,7 @@ td:hover {
 .btn-2 button:not(:last-child) {
   margin-right: 20px;
 }
+
 .btn:hover {
   transform: scale(1.1);
   transition: transform 0.2s ease-in-out;
@@ -313,17 +338,21 @@ td:hover {
 
 
 
-#scroll-to-top-button,#scroll-to-bottom-button{
+#scroll-to-top-button,
+#scroll-to-bottom-button {
   width: 50px;
   height: 50px;
-  border-radius: 100px; /* giá trị bằng 1/2 chiều dài/chiều rộng để tạo hình tròn */
-
+  border-radius: 100px;
+  /* giá trị bằng 1/2 chiều dài/chiều rộng để tạo hình tròn */
+  margin-left: 80%;
 }
-#scroll-to-bottom-button{
+
+#scroll-to-bottom-button {
   background-color: #333333;
 }
-#scroll-to-top-button{
+
+#scroll-to-top-button {
   position: relative;
-  right:650px;
-  background-color:#4CAF50
+  right: 10%;
+  background-color: #4CAF50
 }
